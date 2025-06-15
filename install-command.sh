@@ -10,7 +10,7 @@ else
     echo "User is a root user and proceed with installation"
 fi
 
-dnf install mysql -y
+dnf install nginx -y
     if [ $? -eq 0]
     then
     echo "installation successful"
