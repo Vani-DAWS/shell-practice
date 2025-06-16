@@ -49,7 +49,7 @@ fi
 # fi
 
 function install_package{
-    dnf list installed $2
+    dnf list installed mysql
 if [ $1 -ne 0 ]
 then
     echo "$y $2 is not installed and proceed with installation"
