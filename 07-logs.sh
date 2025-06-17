@@ -25,10 +25,10 @@ fi
 validate(){
     if [ $1 -eq 0 ]
     then
-    echo "$G installation of $2 successful" | tee -a $LOGS_FILE
+    echo -e "$G installation of $2 successful" | tee -a $LOGS_FILE
     exit 1
     else 
-    echo "$R Error:: $N $2 installation failed" | tee -a $LOGS_FILE
+    echo -e "$R Error:: $N $2 installation failed" | tee -a $LOGS_FILE
     fi
 }
 
@@ -36,19 +36,19 @@ validate(){
 dnf list installed nginx &>>$LOGS_FILE
 if [ $? -ne 0 ]
 then
-    echo "$Y nginx is not installed and proceed with installation" | tee -a $LOGS_FILE
+    echo -e "$Y nginx is not installed and proceed with installation" | tee -a $LOGS_FILE
     dnf install nginx -y | tee -a $LOGS_FILE
     validate $? "nginx"
 else
-    echo "$R nginx already installed" | tee -a $LOGS_FILE
+    echo -e "$R nginx already installed" | tee -a $LOGS_FILE
 fi
 
 dnf list installed mysql &>>$LOGS_FILE
 if [ $? -ne 0 ]
 then
-    echo "$Y mysql is not installed and proceed with installation" | tee -a $LOGS_FILE
+    echo -e "$Y mysql is not installed and proceed with installation" | tee -a $LOGS_FILE
     dnf install mysql -y | tee -a $LOGS_FILE
     validate $? "mysql"
 else
-    echo "$Y mysql already installed" | tee -a $LOGS_FILE
+    echo -e "$Y mysql already installed" | tee -a $LOGS_FILE
 fi
