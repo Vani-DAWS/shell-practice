@@ -36,17 +36,17 @@ validate(){
 dnf list installed nginx &>>$LOGS_FILE
 if [ $? -ne 0 ]
 then
-    echo "$y nginx is not installed and proceed with installation" &>>$LOGS_FILE
+    echo "$Y nginx is not installed and proceed with installation" &>>$LOGS_FILE
     dnf install nginx -y &>>$LOGS_FILE
     validate $? "nginx"
 else
-    echo "$Y nginx already installed" &>>LOGS_FILE &>>$LOGS_FILE
+    echo "$Y nginx already installed" &>>$LOGS_FILE
 fi
 
 dnf list installed mysql &>>$LOGS_FILE
 if [ $? -ne 0 ]
 then
-    echo "$y mysql is not installed and proceed with installation" &>>$LOGS_FILE
+    echo "$Y mysql is not installed and proceed with installation" &>>$LOGS_FILE
     dnf install mysql -y &>>$LOGS_FILE
     validate $? "mysql"
 else
