@@ -51,5 +51,3 @@ then
 else
     echo "$Y mysql already installed" | tee -a $LOGS_FILE
 fi
-
-
