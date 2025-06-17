@@ -40,7 +40,7 @@ then
     dnf install nginx -y | tee -a $LOGS_FILE
     validate $? "nginx"
 else
-    echo "$Y nginx already installed" | tee -a $LOGS_FILE
+    echo "$R nginx already installed" | tee -a $LOGS_FILE
 fi
 
 dnf list installed mysql &>>$LOGS_FILE
