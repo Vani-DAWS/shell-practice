@@ -12,7 +12,7 @@ SCRIPT_NAME="echo $0 | cut -d "." f1"
 LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "Script started:$(date)" &>>$LOGS_FILE
+echo "Script started:$(date)" | tee -a $LOGS_FILE
 
 if [ $USERID -ne 0 ]
 then
