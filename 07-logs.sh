@@ -20,9 +20,10 @@ then
     exit 1
 else
     echo -e "$G User is a root user and proceed with installation" | tee -a $LOGS_FILE
+fi
 
 validate(){
-    if [ $1 -eq 0]
+    if [ $1 -eq 0 ]
     then
     echo "$G installation of $2 successful" | tee -a $LOGS_FILE
     exit 1
